@@ -1,0 +1,13 @@
+{
+  "name": "spelix-legacy-module",
+  "version": "1.0.0",
+  "description": "SPELIX Day 3 brownfield lab — legacy module with intentional bad patterns",
+  "main": "legacy.js",
+  "scripts": {
+    "test": "jest --passWithNoTests"
+  },
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
