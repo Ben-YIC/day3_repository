@@ -19,6 +19,12 @@ brownfield refactoring lab. It contains intentional anti-patterns:
 | 4   | Custom command + sub-agent + MCP (starter templates) | [day4_repository](https://github.com/yic-mes/day4_repository) |
 | 5   | Capstone mini project (Option A/B/C specs) | [day5_repository](https://github.com/yic-mes/day5_repository) |
 
+## Prerequisites
+
+- **Fully standalone** — no code from Day 1–2 is required. If your earlier
+  labs went sideways, you can still start Day 3 cleanly from this repo.
+- Node.js 18+, npm 9+, Claude Code installed and logged in
+
 ## Setup
 
 ```bash
