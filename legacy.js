@@ -6,22 +6,7 @@ var q = db.getById;
 var qa = db.getAllRows;
 var ql = db.getOrderLines;
 var cnt = db.getQueryCount;
-
-// money format. dont change, accounting wants commas
-function fmt(n) {
-  var s = (Math.round(n * 100) / 100).toFixed(2);
-  var p = s.split('.');
-  var x = '';
-  var c = 0;
-  for (var i = p[0].length - 1; i >= 0; i--) {
-    x = p[0][i] + x;
-    c++;
-    if (c % 3 == 0 && i > 0) {
-      x = ',' + x;
-    }
-  }
-  return '$' + x + '.' + p[1];
-}
+var fmt = require('./src/format').formatMoney;
 
 // total for one order. discount: tier from customer, also bulk >=500 units extra 3%
 function calc(o) {
