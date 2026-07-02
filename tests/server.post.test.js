@@ -1,4 +1,4 @@
-// HTTP-level tests for the GET/POST /products endpoints.
+// HTTP-level tests for POST /products.
 const { createServer } = require('../server');
 const productsApi = require('../src/productsApi');
 
@@ -14,15 +14,6 @@ beforeEach(async () => {
 
 afterEach(async () => {
   await new Promise((resolve) => server.close(resolve));
-});
-
-test('GET /products returns the full catalog as an array', async () => {
-  const res = await fetch(baseUrl + '/products');
-  const body = await res.json();
-  expect(res.status).toBe(200);
-  expect(Array.isArray(body)).toBe(true);
-  expect(body).toHaveLength(8);
-  expect(body).toContainEqual({ id: 101, name: 'T-Shirt Basic', price: 4.5 });
 });
 
 test('POST /products with a valid body creates and stores a product', async () => {
@@ -66,9 +57,4 @@ test('POST /products with malformed JSON returns 400', async () => {
   const body = await res.json();
   expect(res.status).toBe(400);
   expect(typeof body.error).toBe('string');
-});
-
-test('unknown routes return 404', async () => {
-  const res = await fetch(baseUrl + '/unknown');
-  expect(res.status).toBe(404);
 });
